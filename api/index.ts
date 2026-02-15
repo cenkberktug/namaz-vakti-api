@@ -36,7 +36,7 @@ const allowOriginForAll: RequestHandler = (
     "Access-Control-Allow-Headers",
     "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
   );
-  res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate=59');
+  res.setHeader('Cache-Control', 's-maxage=21600, stale-while-revalidate=86400');
   next();
 };
 
