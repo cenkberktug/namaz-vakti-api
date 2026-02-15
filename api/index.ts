@@ -12,7 +12,6 @@ import {
   getParamsForPlaceSearch,
   isInRange,
 } from "../api_src/util.js";
-import { fileURLToPath } from "url";
 import { getPlaceSuggestionsByText, getNearbyPlaces, getPlaceById } from "irem";
 
 export const app: Express = express();
