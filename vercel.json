@@ -1,14 +1,30 @@
 {
   "version": 2,
+  "functions": {
+    "api/index.ts": {
+      "memory": 256,
+      "maxDuration": 15
+    }
+  },
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/api"
+      "source": "/api/(.*)",
+      "destination": "/api/index.ts"
     }
   ],
-  "functions": {
-    "api/*": {
-      "maxDuration": 55
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=21600, stale-while-revalidate=86400"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
     }
-  }
+  ]
 }
