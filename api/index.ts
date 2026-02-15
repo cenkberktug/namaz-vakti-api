@@ -48,33 +48,33 @@ app.use(express.static("public"));
 app.use(logIPAdress);
 
 app.get("/api/searchPlaces", searchPlaces);
-app.get("/api/nearbyPlaces", nearByPlaces);
-app.get("/api/timesForGPS", getTimesForGPS);
 app.get("/api/timesForPlace", getTimesForPlace);
-app.get("/api/timesFromCoordinates", getTimesFromCoordinates);
-app.get("/api/timesFromPlace", getTimesFromPlace);
-app.get("/api/countries", getCountries);
-app.get("/api/regions", getRegionsOfCountry);
-app.get("/api/cities", getCitiesOfRegion);
-app.get("/api/coordinates", getCoordinateData);
-app.get("/api/place", getPlaceData);
-app.get("/api/placeById", placeById);
-app.get("/api/ip", getIPAdress);
-app.post("/api/timesFromCoordinates", getTimesFromCoordinates);
-app.post("/api/timesFromPlace", getTimesFromPlace);
-app.post("/api/countries", getCountries);
-app.post("/api/regions", getRegionsOfCountry);
-app.post("/api/cities", getCitiesOfRegion);
-app.post("/api/coordinates", getCoordinateData);
-app.post("/api/place", getPlaceData);
-app.post("/api/placeById", placeById);
-app.post("/api/ip", getIPAdress);
+//app.get("/api/nearbyPlaces", nearByPlaces);
+//app.get("/api/timesForGPS", getTimesForGPS);
+//app.get("/api/timesFromCoordinates", getTimesFromCoordinates);
+//app.get("/api/timesFromPlace", getTimesFromPlace);
+//app.get("/api/countries", getCountries);
+//app.get("/api/regions", getRegionsOfCountry);
+//app.get("/api/cities", getCitiesOfRegion);
+//app.get("/api/coordinates", getCoordinateData);
+//app.get("/api/place", getPlaceData);
+//app.get("/api/placeById", placeById);
+//app.get("/api/ip", getIPAdress);
+//app.post("/api/timesFromCoordinates", getTimesFromCoordinates);
+//app.post("/api/timesFromPlace", getTimesFromPlace);
+//app.post("/api/countries", getCountries);
+//app.post("/api/regions", getRegionsOfCountry);
+//app.post("/api/cities", getCitiesOfRegion);
+//app.post("/api/coordinates", getCoordinateData);
+//app.post("/api/place", getPlaceData);
+//app.post("/api/placeById", placeById);
+//app.post("/api/ip", getIPAdress);
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 // if not starting with "/api" return index.html page as response so that routes in the static page will work
-app.get(/^\/(?!api).*/, (_, res) => {
-  res.sendFile(path.resolve(__dirname, "..", "public", "index.html"));
-});
+//app.get(/^\/(?!api).*/, (_, res) => {
+  //res.sendFile(path.resolve(__dirname, "..", "public", "index.html"));
+//});
 
 const PORT = process.env["PORT"] || 3000;
 export const httpServer = app.listen(PORT);
