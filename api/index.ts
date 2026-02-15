@@ -12,9 +12,7 @@ import {
   getParamsForPlaceSearch,
   isInRange,
 } from "../api_src/util.js";
-import path from "path";
 import { fileURLToPath } from "url";
-import { dirname } from "path";
 import { getPlaceSuggestionsByText, getNearbyPlaces, getPlaceById } from "irem";
 
 export const app: Express = express();
@@ -71,7 +69,7 @@ app.post("/api/place", getPlaceData);
 app.post("/api/placeById", placeById);
 app.post("/api/ip", getIPAdress);
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+//const __dirname = dirname(fileURLToPath(import.meta.url));
 // if not starting with "/api" return index.html page as response so that routes in the static page will work
 //app.get(/^\/(?!api).*/, (_, res) => {
   //res.sendFile(path.resolve(__dirname, "..", "public", "index.html"));
